@@ -1,4 +1,24 @@
-<svg width="168" height="30" viewBox="0 0 168 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+import 'https://deno.land/x/xhr@0.2.1/mod.ts'
+import { createClient } from 'jsr:@supabase/supabase-js@2'
+import { codeBlock, oneLine } from 'https://esm.sh/common-tags@1.8.2'
+import {
+  ChatCompletionRequestMessage,
+  ChatCompletionRequestMessageRoleEnum,
+  Configuration,
+  CreateChatCompletionRequest,
+  OpenAIApi,
+} from 'https://esm.sh/openai@3.2.1'
+import { ApplicationError, UserError } from '../common/errors.ts'
+import { getChatRequestTokenCount, getMaxTokenCount, tokenizer } from '../common/tokenizer.ts'
+
+enum MessageRole {
+  User = 'user',
+  Assistant = 'assistant',
+}
+
+interface Message {
+  role: MessageRole
+  content: string<svg width="168" height="30" viewBox="0 0 168 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_306_6257)">
 <rect x="0.5" y="0.5" width="167" height="29" rx="3.5" fill="#232323"/>
 <g clip-path="url(#clip1_306_6257)">
